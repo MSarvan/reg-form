@@ -12,9 +12,9 @@
   border-radius: 10px;
   background-color: #fff;
   width: fit-content;
-  padding: 75px 50px;
+  padding: 20px 50px 50px;
   box-sizing: border-box;
-  box-shadow: 5px 6px 5px rgb(189, 186, 186);
+  box-shadow: 8px 8px 5px rgb(189, 186, 186);
 }
 form input {
   margin-bottom: 15px;
@@ -22,4 +22,13 @@ form input {
   height: 30px;
   outline: none;
   padding-left: 10px;
+}
+button {
+  width: 365px;
+  height: 35px;
+  cursor: pointer;
+  color: #fff;
+  background-color: blue;
+  border-radius: 5px;
+  border: transparent;
 }
