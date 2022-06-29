@@ -2,27 +2,82 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [details, setDetails] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    country: "",
+    city: "",
+    state: "",
+    message: "",
+  });
 
-  const [] = useState();
-
+  const handleChange = (e) => {
+    setDetails({...details, [e.target.name]: e.target.value});
+  };
+  
   return (
     <div className="App">
       <div>
         <h2>Register</h2>
         <form action="">
-          <input type="text" placeholder="Enter your Name*" required/>
+          <input
+            type="text"
+            name="name"
+            value={details.name}
+            placeholder="Enter your Name*"
+            required
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="Enter your Mail Id*" required/>
+          <input
+            type="email"
+            name="email"
+            value={details.email}
+            placeholder="Enter your Mail Id*"
+            required
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="Enter your Mobile no." />
+          <input
+            type="text"
+            name="mobile"
+            value={details.mobile}
+            placeholder="Enter your Mobile no."
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="Country" />
+          <input
+            type="text"
+            name="country"
+            value={details.country}
+            placeholder="Country"
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="City" />
+          <input
+            type="text"
+            name="city"
+            value={details.city}
+            placeholder="City"
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="State" />
+          <input
+            type="text"
+            name="state"
+            value={details.state}
+            placeholder="State"
+            onChange={(e) => handleChange(e)}
+          />
           <br />
-          <input type="text" placeholder="Message" />
+          <input
+            type="text"
+            name="message"
+            value={details.message}
+            placeholder="Message"
+            onChange={(e) => handleChange(e)}
+          />
           <br />
           <br />
           <button>Submit</button>
