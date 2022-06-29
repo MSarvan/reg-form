@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -11,16 +11,29 @@ function App() {
     state: "",
     message: "",
   });
+  const [refresh, setRefresh] = useState(true);
+
+  useEffect(() => {
+    setDetails({});
+  }, [refresh])
 
   const handleChange = (e) => {
     setDetails({...details, [e.target.name]: e.target.value});
-  };
+  }
+
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    // console.log(details.name);
+    alert("Registered successfully!");
+    
+    setRefresh(!refresh);
+  }
   
   return (
     <div className="App">
       <div>
         <h2>Register</h2>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
